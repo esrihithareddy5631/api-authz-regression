@@ -1,0 +1,27 @@
+case_id,actor,target,operation,expected,reason
+R01,alice,alice_doc,read,ALLOW,Owner accessing own document
+R02,bob,alice_doc,read,DENY,Peer cannot access private document
+R03,admin_a,alice_doc,read,ALLOW,Administrator within own tenant
+R04,carol,carol_doc,read,ALLOW,Owner accessing own document
+R05,admin_b,carol_doc,read,ALLOW,Administrator within own tenant
+R06,admin_a,carol_doc,read,DENY,Administrator crossing tenant boundary
+R07,admin_b,alice_doc,read,DENY,Administrator crossing tenant boundary
+R08,anonymous,alice_doc,read,DENY,Authentication required
+U01,alice,alice_doc,update,ALLOW,Owner accessing own document
+U02,bob,alice_doc,update,DENY,Peer cannot access private document
+U03,admin_a,alice_doc,update,ALLOW,Administrator within own tenant
+U04,carol,carol_doc,update,ALLOW,Owner accessing own document
+U05,admin_b,carol_doc,update,ALLOW,Administrator within own tenant
+U06,admin_a,carol_doc,update,DENY,Administrator crossing tenant boundary
+U07,admin_b,alice_doc,update,DENY,Administrator crossing tenant boundary
+U08,anonymous,alice_doc,update,DENY,Authentication required
+D01,alice,alice_doc,delete,ALLOW,Owner accessing own document
+D02,bob,alice_doc,delete,DENY,Peer cannot access private document
+D03,admin_a,alice_doc,delete,ALLOW,Administrator within own tenant
+D04,carol,carol_doc,delete,ALLOW,Owner accessing own document
+D05,admin_b,carol_doc,delete,ALLOW,Administrator within own tenant
+D06,admin_a,carol_doc,delete,DENY,Administrator crossing tenant boundary
+D07,admin_b,alice_doc,delete,DENY,Administrator crossing tenant boundary
+D08,anonymous,alice_doc,delete,DENY,Authentication required
+
+

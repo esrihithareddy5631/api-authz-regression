@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.db
+*.db-wal
+*.db-shm
+.env
+fixtures-private.json
+evidence/*
+reports/*
+
+# Historical local backups
+app/main.day*-backup.py
